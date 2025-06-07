@@ -1,0 +1,17 @@
+function validateForm(event) {
+    const theForm = event.target;
+    const errors = [];
+    let isValid = true;
+
+    if (!isValid) {
+        event.preventDefault();
+        showErrors(errors);
+        return false;
+    }
+}
+
+function showErrors(errors) {
+    const errorEl = document.querySelector(".errors");
+    const html = errors.map((error) => `<p>${error}</p>`);
+    errorEl.innerHTML = html.join("");
+}
