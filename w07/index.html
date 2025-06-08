@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card</title>
+    <link rel="stylesheet" href="card.css">
+    <script src="card.js" defer></script>
+</head>
+<body>
+    <main>
+        <form action="" id="creditCardForm">
+            <p id="cardFront">
+                <label for="cardNum">CARD NUMBER</label><br>
+                <input type="text" name="cardNum" id="cardNum" inputmode="numeric" pattern="[0-9]{16}" maxlength="16" placeholder="Enter card number" required><br>
+
+                <label for="cardHolder">CARD HOLDER</label>
+                <label for="expMonth">EXPIRATION</label><br>
+                <input type="text" name="cardHolder" id="cardHolder" placeholder="John Doe" required>
+                <input type="text" name="expMonth" id="expMonth" placeholder="MM" required>
+                <input type="text" name="expYear" id="expYear" placeholder="YY" required>
+            </p>
+            <p id="cardBack">
+                <label for="secCode">CBC/CVV</label><br>
+                <input type="text" name="secCode" id="secCode" inputmode="numeric" pattern="[0-9]{3}" maxlength="3" placeholder="xxx" required>
+            </p>
+
+            <input type="submit" id="submit" value="Submit">
+        </form>
+    </main>
+</body>
+</html>
