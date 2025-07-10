@@ -1,0 +1,42 @@
+#content {
+    padding: auto;
+    margin: 5em;
+}
+
+h1, h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    line-height: 1.5;
+}
+
+h2 {
+    color: #006eb6;
+    border-bottom: 2px solid black;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+#sturf {
+    padding-top: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+footer {
+    text-align: center;
+}
+
+footer img {
+    width: 150px;
+}
+
+.dark {
+    background-color: #333;
+    color: white;
+}
+
+.dark header h2 {
+    border-bottom: 2px solid white;
+    color: #4f9acf;
+}

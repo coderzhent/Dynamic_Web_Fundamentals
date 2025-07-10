@@ -1,0 +1,7 @@
+JavaScript Usages:
+1. DOM interaction (select an elemnt, modify it, and listen for and react to events)
+	On sub pages, if projects contain markdown files, it will have embedded html that the visitor can enable and view.
+2. Conditional branching
+	Check whether a project contains markdown files or html and if so then embed them.
+3. Objects, arrays, and array methods (foreach, map, reduce, and filter)
+	In the preview blocks, lists of projects will be used (arrays) and filtering can be applied to the lists.
