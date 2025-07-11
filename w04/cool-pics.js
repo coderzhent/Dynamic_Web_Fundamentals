@@ -16,6 +16,7 @@ function handleResize() {
 
 function closeModal() {
     bigPic.src = "";
+    bigPic.alt = "placeholder for pciture";
     dialog.close();
 }
 
@@ -35,6 +36,7 @@ imgs.addEventListener('click', (event) => {
     if ((img !== null) && (img.tagName === "IMG")) {
         const imgSrc = img.src.split('-')[0] + "-full.jpeg";
         bigPic.src = imgSrc;
+        bigPic.alt = img.alt;
         dialog.showModal();
     } else {
         console.log("Didn't click an image.");
