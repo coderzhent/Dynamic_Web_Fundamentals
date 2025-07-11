@@ -21,15 +21,14 @@ function closeModal() {
 
 const menuBtn = document.getElementById("menuButton");
 const navSec = document.getElementById("navLinks");
-menuBtn.addEventListener('click', toggleMenu);
-
-handleResize();
-window.addEventListener('resize', handleResize);
-
 const dialog = document.querySelector(".imgView");
 const bigPic = dialog.querySelector("img");
 const imgs = document.querySelector(".gallery");
 const closeBtn = document.querySelector(".close-viewer");
+
+menuBtn.addEventListener('click', toggleMenu);
+window.addEventListener('resize', handleResize);
+closeBtn.addEventListener('click', closeModal);
 
 imgs.addEventListener('click', (event) => {
     const img = event.target.closest('img');
@@ -40,12 +39,13 @@ imgs.addEventListener('click', (event) => {
     } else {
         console.log("Didn't click an image.");
     }
-})
+});
 
-closeBtn.addEventListener('click', closeModal)
 
 dialog.addEventListener('click', (event) => {
     if (event.target === dialog || event.target.tagName === "DIV") {
         closeModal();
     }
-})
+});
+
+handleResize();
