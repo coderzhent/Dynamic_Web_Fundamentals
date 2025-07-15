@@ -1,9 +1,9 @@
 what is the purpose of the site:
 	Provide a place where readers can provide reviews on books they have read for perspective readers.
 Who is the audience:
-	Perspective readers
+	Perspective readers who are young adults so from about 10 to 18 years old. The site also serves parents of avid readers.
 What will the audience hope to accomplish on the site:
-	Find a book that fits their interests as well as fits in with their age appropriateness.
+	There are two goals, first provide content information for parents as well as reading level, and second to find a book that fits the interests of young adults.
 What content will be needed on the site:
 	A lot of text and comment sections.
 What features might the site need:
