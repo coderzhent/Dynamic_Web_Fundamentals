@@ -1,0 +1,90 @@
+#creditCardForm {
+    display: grid;
+    width: 390px;
+    grid-template-columns: 80px 210px 80px;
+    grid-template-rows: 30px 148px 30px 30px;
+    gap: 10px;
+}
+
+#card-front, #card-back {
+    background-color: lightgray;
+    width: 300px;
+    height: 188px;
+    display: grid;
+    border-radius: 0.5rem;
+    gap: 10px;
+}
+
+#card-front {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    z-index: 1;
+
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#card-back {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    z-index: 0;
+
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+#cardBtn {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+main input {
+    box-sizing: border-box;
+}
+
+main label {
+    font-size: small;
+}
+
+main input {
+    width: 100%;
+}
+
+#amount {
+    align-self: center;
+}
+
+#cardMonth {
+    width: 45%;
+}
+
+#cardYear {
+    width: 45%;
+}
+
+#cardnumber-container {
+    grid-column-start: 1;
+    grid-column-end: end;
+}
+
+#card-stripe {
+    grid-column-start: 1;
+    grid-column-end: end;
+    background-color: black;
+    height: 60%;
+    margin-top: 18px;
+}
+
+#cvc-container {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    align-self: center;
+}
