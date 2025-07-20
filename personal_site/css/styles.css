@@ -53,3 +53,8 @@ footer p {
 .social a {
     color: var(--accent2-color);
 }
+
+/* Helper classes */
+.hide {
+    display: none;
+}

@@ -12,7 +12,6 @@
 </head>
 <body>
     <dialog id="projectViewer">
-        <!-- Have filters in here with project list and preview on the side -->
         <!-- The shorthand description describes the relevance to the preview they clicked, ie.. language: (This project comprises: Python, Quarto, MySQL) -->
         <!-- Sorted by (If language, most proficient at the top, If recent, most recent at the top, If by topic: most favorite/memorable at the top) -->
         <button class="closeViewer" id="projViewerBtn">X</button>
@@ -41,15 +40,15 @@
                 </aside>
             </div>
             <section class="preview">
-                <h1></h1>
+                <h1 id="projectTitle">Project Name</h1>
+                <h3 id="projectDate">Last Updated: date</h3>
                 <h3>Tags</h3>
-                <p>Code/Tool, Code/Tool, Code/Tool</p>
-                <h3>Last Updated: date</h3>
+                <p id="tagList">Code/Tool, Code/Tool, Code/Tool</p>
                 <h4>Project Description</h4>
-                <p>Some shorter description</p>
+                <p id="projDesc">Some shorter description</p>
                 <h4>Objective & Purpose</h4>
-                <p>Project was meant to do</p>
-                <img src="" alt="Project Main Photo">
+                <p id="projObj">Project was meant to do</p>
+                <img id="heroPortrait" src="" alt="Project Main Photo">
             </section>
         </div>
     </dialog>

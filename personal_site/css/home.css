@@ -160,11 +160,6 @@ dialog > div {
     color: var(--secondary-color);
 }
 
-/* Helper classes */
-.hide {
-    display: none;
-}
-
 @media screen and (min-width: 850px) {
     .pitch {
         grid-template-columns: repeat(2, 1fr);
