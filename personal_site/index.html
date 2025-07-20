@@ -3,9 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An overview and summary of personal projects.">
+    <meta name="author" content="Ezekial Curran">
     <title>Project Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    
+    <dialog id="projectViewer">
+        <!-- Have filters in here with project list and preview on the side -->
+        <!-- The shorthand description describes the relevance to the preview they clicked, ie.. language: (This project comprises: Python, Quarto, MySQL) -->
+        <!-- Sorted by (If language, most proficient at the top, If recent, most recent at the top, If by topic: most favorite/memorable at the top) -->
+        <button class="closeViewer" id="projViewerBtn">X</button>
+        <button id="menuButton">Menu</button>
+        <div id="viewerGrid">
+            <div id="projViewFilt">
+                <aside>
+                    <h3 id="filterTitle">Filter Title</h3>
+                    <div>
+                        <h4>Filters</h4>
+                        <label><input type="checkbox" id="allFilters">All Filter</label><br>
+                        <label><input type="checkbox" class="filtOption">Sample Filter 1</label><br>
+                        <label><input type="checkbox" class="filtOption">Sample Filter 2</label><br>
+                        <label><input type="checkbox" class="filtOption">Sample Filter 3</label><br>
+                        <label><input type="checkbox" class="filtOption">Sample Filter 4</label><br>
+                    </div>
+                    <div>
+                        <h4>Projects</h4>
+                        <ul class="projectList">
+                            <li><button class="projBtn">Sample Project 1</button></li>
+                            <li><button class="projBtn">Sample Project 2</button></li>
+                            <li><button class="projBtn">Sample Project 3</button></li>
+                            <li><button class="projBtn">Sample Project 4</button></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+            <section class="preview"></section>
+        </div>
+    </dialog>
+    <dialog id="randProjViewer">
+        <button class="closeViewer" id="randViewerBtn">X</button>
+        <div id="randGrid">
+            <aside>
+                <h3>Three Random Projects</h3>
+                <div>
+                    <ul>
+                        <li><button class="projBtn">Random Project 1</button></li>
+                        <li><button class="projBtn">Random Project 2</button></li>
+                        <li><button class="projBtn">Random Project 3</button></li>
+                    </ul>
+                </div>
+            </aside>
+            <section class="preview"></section>
+        </div>
+    </dialog>
+    <header>
+        <a href="index.html" id="logoLink">
+          <img class="logo" src="files/logo.png" alt="Main Logo" />
+        </a>
+    </header>
+    <main>
+        <section class="pitch">
+            <h1 class="pitchLeft" id="me">Ezekial Curran Projects Portfolio</h1>
+            <p class="pitchLeft" id="mePitch">I am a Computer Science major attending Brigham Young University - Idaho with an emphasis on Mathematics and Machine Learning.</p>
+            <button class="pitchLeft" id="randBtn">Preview Random Project</button>
+            <video id="funny" src="files/funnyclip.mp4" muted autoplay loop>Your browser does not support the video tag.</video>
+        </section>
+        <section id="projects">
+            <h1>My Projects</h1>
+            <p>Preview projects by selecting a category to go by below.</p>
+        </section>
+        <div id="projectPreviews">
+            <div>
+                <h2>Projects by Languages/Tools</h2>
+                <h3 id="languageProjectCount"># of Projects</h3>
+                <ul id="languageProjects" class="projectList">
+                    <li>Python</li>
+                    <li>MySQL</li>
+                    <li>Quarto</li>
+                    <li>JavaScript</li>
+                    <li>C++</li>
+                </ul>
+                <button class="projectBtn" id="projLangBtn">View</button>
+            </div>
+            <div>
+                <h2>Projects by Topic</h2>
+                <h3 id="topicProjectCount"># of Projects</h3>
+                <ul id="topicProjects" class="projectList">
+                    <li>Data Cleaning</li>
+                    <li>Data Exploration</li>
+                    <li>Machine Learning</li>
+                    <li>Find something</li>
+                    <li>Find another thing</li>
+                </ul>
+                <button class="projectBtn" id="projTopicBtn">View</button>
+            </div>
+            <div>
+                <h2>Projects by Most Recent</h2>
+                <h3 id="recentProjectCount"># of Projects</h3>
+                <ul id="recentProjects" class="projectList">
+                    <li>Baseball Pitches - Todays date</li>
+                    <li>Star Wars Favorites - Two Weeks ago</li>
+                    <li>Panning Diagram - years ago</li>
+                    <li>Automotive Mechanics Database - years ago</li>
+                    <li>Another project</li>
+                </ul>
+                <button class="projectBtn" id="projRecentBtn">View</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footerLogo">
+            <a href="index.html" id="logoLink">
+              <img class="logo" src="files/logo.png" alt="Main Logo" />
+            </a>
+        </div>
+        <p>2025 &copy; - Ezekial Curran</p>
+        <div class="social">
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
 </body>
 </html>
