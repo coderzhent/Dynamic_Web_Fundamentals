@@ -16,10 +16,6 @@ function toggleFilter() {
     filtMenu.classList.toggle('hide');
 }
 
-function resetDialog() {
-
-}
-
 function openPreviewdialog(event) {
     const projCat = event.target.id;
     previewDialog.showModal();
