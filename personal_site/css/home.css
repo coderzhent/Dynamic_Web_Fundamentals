@@ -162,10 +162,15 @@ dialog > div {
 
 .heroPortrait {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 50vh;
 }
 
-.preview-link {
+.preview {
+    width: 100%;
+    height: 85vh;
+}
+
+.previewLink {
     display: none;
     text-decoration: none;
     background-color: var(--primary-color);
@@ -175,18 +180,18 @@ dialog > div {
     font-weight: normal;
 }
 
-.preview-link:link, .preview-link:visited {
+.previewLink:link, .previewLink:visited {
     color: var(--secondary-color);
 }
 
-.preview-link:hover {
+.previewLink:hover {
     background-color: var(--accent1-color);
     color: var(--text-dark);
     font-size: 1.25em;
     font-weight: bolder;
 }
 
-.preview:hover .preview-link {
+.preview:hover .previewLink {
     position: absolute;
     display: block;
     text-align: center;

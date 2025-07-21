@@ -126,6 +126,7 @@ function renderSelection(projId) {
     const sect = previewDialog.open ? 
         previewDialog.querySelector(".preview") :
         randDialog.querySelector(".preview");
+    const projLink = sect.querySelector(".previewLink");
     
     const projTitle = sect.querySelector(".projectTitle");
     const projDate = sect.querySelector(".projectDate");
@@ -141,6 +142,7 @@ function renderSelection(projId) {
         projDesc.innerText = proj.description;
         projObj.innerText = proj.objective;
         projImg.src = proj.media.find(i => i.order === "hero").file;
+        projLink.href = `projTemplate.html#${projId}`
     } else {
         projTitle.innerText = "Project Name"
         projDate.innerText = `Last Updated: date`;
@@ -148,6 +150,7 @@ function renderSelection(projId) {
         projDesc.innerText = "Some shorter description";
         projObj.innerText = "Project was meant to do";
         projImg.src = "";
+        projLink.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
     }
 }
 
