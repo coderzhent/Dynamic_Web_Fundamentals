@@ -187,7 +187,6 @@ const projectPreviews = {
 const fun = document.querySelector("#funny");
 const previewDialog = document.querySelector("#projectViewer");
 const randDialog = document.querySelector("#randProjViewer");
-const allCheckBox = document.querySelector("#allFilters");
 const menuBtn = document.querySelector("#menuButton");
 const filtMenu = document.querySelector("#projViewFilt");
 
@@ -203,21 +202,16 @@ document.querySelector("#randBtn").addEventListener('click', (event) => {
     // bigPic.src = imgSrc;
     // bigPic.alt = img.alt;
     // pick three randoms and select the first
+    const projIds = [];
+    projects.forEach(i => {
+        projIds.push(i.id);
+    });
+
+    const randIndex = Math.floor(Math.random() * projIds.length);
+    // console.log("Random index:", randIndex);
+    // console.log("Selected ID:", projIds[randIndex]);
     randDialog.showModal();
+    renderSelection(projIds[randIndex]);
 });
-
-allCheckBox.addEventListener('change', () => {
-    const optionBoxes = previewDialog.querySelectorAll(".filtOption");
-    if (allCheckBox.checked) {
-        optionBoxes.forEach(i => i.checked = false);
-    }
-});
-
-previewDialog.querySelectorAll(".filtOption").forEach(i => {i.addEventListener('change', () => {
-    if (i.checked) {
-        allCheckBox.checked = false;
-        // adjust filter from here
-    }
-})});
 
 handleResize();
