@@ -17,6 +17,26 @@ const aCourse = {
       instructor: "Sis A",
     },
   ],
+  // enrollStudent: function (sectionNum) {
+  //   // find the right section...Array.findIndex will work here
+  //   const sectionIndex = this.sections.findIndex(
+  //     (section) => section.sectionNum == sectionNum
+  //   );
+  //   if (sectionIndex >= 0) {
+  //     this.sections[sectionIndex].enrolled++;
+  //     renderSections(this.sections);
+  //   }
+  // },
+  // dropStudent: function (sectionNum) {
+  //   // find the right section...Array.findIndex will work here
+  //   const sectionIndex = this.sections.findIndex(
+  //     (section) => section.sectionNum == sectionNum
+  //   );
+  //   if (sectionIndex >= 0) {
+  //     this.sections[sectionIndex].enrolled--;
+  //     renderSections(this.sections);
+  //   }
+  // },
   changeEnrollment: function (sectionNum, add = true) {
     // find the right section...Array.findIndex will work here
     const sectionIndex = this.sections.findIndex(
@@ -54,11 +74,13 @@ function renderSections(sections) {
 
 document.querySelector("#enrollStudent").addEventListener("click", function () {
   const sectionNum = document.querySelector("#sectionNumber").value;
-  aCourse.enrollStudent(sectionNum);
+  // aCourse.enrollStudent(sectionNum);
+  aCourse.changeEnrollment(sectionNum);
 });
 document.querySelector("#dropStudent").addEventListener("click", function () {
   const sectionNum = document.querySelector("#sectionNumber").value;
-  aCourse.dropStudent(sectionNum);
+  // aCourse.dropStudent(sectionNum);
+  aCourse.changeEnrollment(sectionNum, false);
 });
 
 setCourseInfo(aCourse);

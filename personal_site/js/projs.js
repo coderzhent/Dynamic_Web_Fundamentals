@@ -1,4 +1,4 @@
-const projects = [{
+export const projects = [{
     id: "00000006",
     title: "Anticipating Ciritical Temperature for Superconductors",
     description: `These predictions aren't for determining whether something is a superconductor but rather what the critical temperature is for superconductors. Features extracted include thermal conductivity, atomic radius, atomic mass, electron affinity, and valence. Gradient Boosting has the model used to train on the data.`,
@@ -28,7 +28,7 @@ const projects = [{
             file: "files/00000006/tertiary.png",
             type: "image",
             order: "tertiary"
-        },
+        }
     ]
 }, {
     id: "00000005",
@@ -60,7 +60,7 @@ const projects = [{
             file: "files/00000005/tertiary.png",
             type: "image",
             order: "tertiary"
-        },
+        }
     ]
 }, {
     id: "00000003",
@@ -93,7 +93,7 @@ const projects = [{
             file: "files/00000003/tertiary.png",
             type: "image",
             order: "tertiary"
-        },
+        }
     ]
 }, {
     id: "00000002",
@@ -125,7 +125,7 @@ const projects = [{
             file: "none",
             type: "",
             order: "tertiary"
-        },
+        }
     ]
 }, {
     id: "00000001",
@@ -157,9 +157,53 @@ const projects = [{
             file: "none",
             type: "",
             order: "tertiary"
-        },
+        }
     ]
 }];
+
+export function getTags() {
+    const tagMap = {};
+
+    projects.forEach(i => {
+        i.tags.forEach(j => {
+            if (!tagMap[j.toLowerCase()]) {
+                tagMap[j.toLowerCase()] = [];
+            }
+            tagMap[j.toLowerCase()].push(i.id);
+        });
+    });
+
+    return tagMap;
+}
+
+export function getTopics() {
+    const topicMap = {};
+
+    projects.forEach(i => {
+        i.topics.forEach(j => {
+            if (!topicMap[j.toLowerCase()]) {
+                topicMap[j.toLowerCase()] = [];
+            }
+            topicMap[j.toLowerCase()].push(i.id);
+        });
+    });
+
+    return topicMap;
+}
+
+export function getDates() {
+    const dateMap = {};
+
+    projects.forEach(i => {
+        const dateObj = new Date(i.date);
+        if (!dateMap[dateObj]) {
+            dateMap[dateObj] = [];
+        }
+        dateMap[dateObj].push(i.id);
+    });
+
+    return dateMap;
+}
 
 function fetchData() {
     fetch('files/data.txt')

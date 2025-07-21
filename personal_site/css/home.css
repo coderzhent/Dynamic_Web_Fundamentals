@@ -160,6 +160,11 @@ dialog > div {
     color: var(--secondary-color);
 }
 
+.heroPortrait {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 @media screen and (min-width: 850px) {
     .pitch {
         grid-template-columns: repeat(2, 1fr);
