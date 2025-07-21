@@ -23,14 +23,11 @@ function openPreviewdialog(event) {
     const filterTitle = previewDialog.querySelector("#filterTitle");
     const filters = previewDialog.querySelector('.filters');
     filterTitle.innerText = projectPreviews[projCat];
-    allCheckBox.checked = true;
 
     // wipes out all elements
     filters.replaceChildren();
     
     // List 3: All dates ~list~
-    
-    // values are the project options
     
     const allChk = document.createElement('input');
     allChk.type = 'checkbox';
@@ -54,7 +51,9 @@ function openPreviewdialog(event) {
         chkBx.value = i;
         
         const lbl = document.createElement('label');
-        lbl.innerText = i;
+        lbl.innerText = projCat !== "projRecentBtn" ? 
+            i :
+            `${(new Date(i)).getFullYear()}-${(new Date(i)).getMonth() + 1}`;
         lbl.appendChild(chkBx);
         
         filters.appendChild(lbl);
@@ -81,7 +80,6 @@ function openPreviewdialog(event) {
 }
 
 function updateResults(data) {
-    // otherwise get all the other checkboxes and validate which are checked
     const allChk = previewDialog.querySelector("#allFilters");
     const selected = allChk.checked ? 
         Array.from(previewDialog.querySelectorAll(".filtOption")).map(i => i.value) : 
@@ -103,9 +101,6 @@ function updateResults(data) {
 }
 
 function renderResults(opts) {
-    // adjust buttons
-    // console.log("Showing options");
-    // console.log(opts);
     const projList = previewDialog.querySelector('.projectList');
     projList.replaceChildren();
 
@@ -129,7 +124,6 @@ function renderResults(opts) {
 }
 
 function renderSelection(projId) {
-    // Title, Date, Tags, Description, Objective, hero
     const proj = projects.find(i => i.id === projId);
     const sect = previewDialog.open ? 
         previewDialog.querySelector(".preview") :
@@ -160,16 +154,9 @@ function renderSelection(projId) {
 }
 
 function closeModal() {
-    // bigPic.src = "";
-    // bigPic.alt = "placeholder for pciture";
-    // set preview section blank
-    // const viewer = e.currentTarget.id;
-    // console.log("Button:", viewer);
-    // console.log("Attempting to close!");
     renderSelection("none");
     if (previewDialog.open) previewDialog.close();
     if (randDialog.open) randDialog.close();
-    // console.log("Closed!");
 }
 
 function clickOutModal(event) {
@@ -199,17 +186,12 @@ randDialog.addEventListener('click', clickOutModal);
 previewDialog.addEventListener('click', clickOutModal);
 
 document.querySelector("#randBtn").addEventListener('click', (event) => {
-    // bigPic.src = imgSrc;
-    // bigPic.alt = img.alt;
-    // pick three randoms and select the first
     const projIds = [];
     projects.forEach(i => {
         projIds.push(i.id);
     });
 
     const randIndex = Math.floor(Math.random() * projIds.length);
-    // console.log("Random index:", randIndex);
-    // console.log("Selected ID:", projIds[randIndex]);
     randDialog.showModal();
     renderSelection(projIds[randIndex]);
 });
