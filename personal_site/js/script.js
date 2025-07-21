@@ -27,8 +27,6 @@ function openPreviewdialog(event) {
     // wipes out all elements
     filters.replaceChildren();
     
-    // List 3: All dates ~list~
-    
     const allChk = document.createElement('input');
     allChk.type = 'checkbox';
     allChk.id = 'allFilters';
