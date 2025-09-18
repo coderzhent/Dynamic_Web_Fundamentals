@@ -1,4 +1,68 @@
 export const projects = [{
+    id: "00000008",
+    title: "Strcuture Diagram in Canvas Pan and Zoom Application",
+    description: `Builds simple multi-node tree structures in a canvas that can pan and zoom. Each node also can be selected to retrieve stored information on the node.`,
+    objective: `A structure diagram app for remembering and organizing connected terms in classes.`,
+    overview: "User can add connected terms to a tree like structure to review and improve understanding. The canvas can be moved around and a zoom functionality is implemented to support incredibly large structures.",
+    link: "None",
+    tags: ['C#'],
+    date: "July 10, 2024",
+    topics: ['Frontend Development'],
+    media: [
+        {
+            file: "files/00000008/hero.png",
+            type: "image",
+            order: "hero"
+        },
+        {
+            file: "files/00000008/primary.png",
+            type: "image",
+            order: "primary"
+        },
+        {
+            file: "files/00000008/secondary.png",
+            type: "image",
+            order: "secondary"
+        },
+        {
+            file: "files/00000008/tertiary.png",
+            type: "image",
+            order: "tertiary"
+        }
+    ]
+}, {
+    id: "00000007",
+    title: "Vehicle Mechanics Database Manager",
+    description: `Application for interfacing with a database holding service, customer, vehicle, and parts information to be used in a mechanics shop.`,
+    objective: `Provide a convenient access application for building and maintaining service records in a mechanics shop.`,
+    overview: "The application interfaces with a database giving users the ability to manage inventory and maintain service records.",
+    link: "None",
+    tags: ['Java', 'MySQL'],
+    date: "October 10, 2020",
+    topics: ['Database Queries', 'Frontend Development', 'Database Design'],
+    media: [
+        {
+            file: "files/00000007/hero.png",
+            type: "image",
+            order: "hero"
+        },
+        {
+            file: "files/00000007/primary.png",
+            type: "image",
+            order: "primary"
+        },
+        {
+            file: "files/00000007/secondary.png",
+            type: "image",
+            order: "secondary"
+        },
+        {
+            file: "files/00000007/tertiary.png",
+            type: "image",
+            order: "tertiary"
+        }
+    ]
+}, {
     id: "00000006",
     title: "Anticipating Ciritical Temperature for Superconductors",
     description: `These predictions aren't for determining whether something is a superconductor but rather what the critical temperature is for superconductors. Features extracted include thermal conductivity, atomic radius, atomic mass, electron affinity, and valence. Gradient Boosting has the model used to train on the data.`,
