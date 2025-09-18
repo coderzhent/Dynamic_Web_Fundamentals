@@ -9,6 +9,7 @@ function buildContent() {
     const projHero = document.querySelector("#heroPortrait");
     
     // Overview Area
+    const projOver = document.querySelector("#projOverview")
     const projObj = document.querySelector("#projObj");
     const projImgP = document.querySelector("#primaryImg");
     const projImgS = document.querySelector("#secondaryImg");
@@ -26,6 +27,7 @@ function buildContent() {
         projDesc.innerText = proj.description;
         projHero.src = projMedia.find(i => i.order.toLowerCase() === "hero").file;
 
+        projOver.innerText = proj.overview;
         projObj.innerText = proj.objective;
         if (projMedia.find(i => i.order.toLowerCase() === "primary").file.toLowerCase() === "none") {
             // no primary image hide it
