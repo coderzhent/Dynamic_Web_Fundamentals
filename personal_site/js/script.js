@@ -154,6 +154,40 @@ function renderSelection(projId) {
     }
 }
 
+function getRandKeys(keys, count) {
+    // shuffle the array, using knuth's method
+    for (let i = keys.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [keys[i], keys[j]] = [keys[j], keys[i]];
+    }
+
+    return keys.slice(0, count);
+}
+
+function buildPreviewList(query, listToAdd) {
+    const previewList = projPreview.querySelector(query);
+    previewList.replaceChildren();
+
+    listToAdd.forEach(i => {
+        const listEl = document.createElement('li');
+        listEl.innerText = i;
+
+        previewList.appendChild(listEl);
+    });
+}
+
+function buildPreviews() {
+    // pick 5 dates (5 most recent) (sort it?)
+    const allTags = Object.keys(getTags());
+    const allTopics = Object.keys(getTopics());
+    const allDates = Object.keys(getDates());
+    const randTags = getRandKeys(allTags, 5);
+    const randTopics = getRandKeys(allTopics, 5);
+
+    buildPreviewList('#languageProjects', randTags);
+    buildPreviewList('#topicProjects', randTopics);
+}
+
 function closeModal() {
     renderSelection("none");
     if (previewDialog.open) previewDialog.close();
@@ -177,6 +211,7 @@ const previewDialog = document.querySelector("#projectViewer");
 const randDialog = document.querySelector("#randProjViewer");
 const menuBtn = document.querySelector("#menuButton");
 const filtMenu = document.querySelector("#projViewFilt");
+const projPreview = document.querySelector('#projectPreviews')
 
 window.addEventListener('resize', handleResize);
 document.querySelectorAll(".closeViewer").forEach(b => {b.addEventListener('click', closeModal)});
@@ -198,3 +233,4 @@ document.querySelector("#randBtn").addEventListener('click', (event) => {
 });
 
 handleResize();
+buildPreviews();
